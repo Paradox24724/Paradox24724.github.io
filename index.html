@@ -1,11 +1,276 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>Open Your Eyes, Open Your Mind</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="个人主页" />
+  <title>Xin Cheng · 个人主页</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#101a2f;
+      --text:#e8eefc;
+      --muted:#b8c6ea;
+      --line:rgba(255,255,255,.12);
+      --accent:#6ea8ff;
+      --accent2:#7ef0c5;
+      --shadow:0 12px 30px rgba(0,0,0,.35);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "PingFang SC","Hiragino Sans GB","Microsoft YaHei", Arial, "Noto Sans CJK SC", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1000px 600px at 15% 10%, rgba(110,168,255,.28), transparent 60%),
+        radial-gradient(900px 500px at 90% 20%, rgba(126,240,197,.18), transparent 55%),
+        linear-gradient(180deg, #070b14 0%, var(--bg) 55%, #060a12 100%);
+      line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:980px; margin:0 auto; padding:24px}
+    .nav{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter:saturate(180%) blur(10px);
+      background:rgba(6,10,18,.55);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px; max-width:980px; margin:0 auto;}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px}
+    .dot{
+      width:12px; height:12px; border-radius:50%;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 0 0 4px rgba(110,168,255,.15);
+    }
+    .nav-links{display:flex; gap:14px; flex-wrap:wrap; align-items:center}
+    .nav-links a{
+      font-size:14px; color:var(--muted);
+      padding:8px 10px; border-radius:10px;
+    }
+    .nav-links a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+    .hero{padding:42px 0 18px}
+    .hero-grid{display:grid; grid-template-columns: 1.4fr .9fr; gap:18px}
+    @media (max-width:860px){ .hero-grid{grid-template-columns:1fr;}}
+    .card{
+      background:rgba(16,26,47,.78);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .hero-main{padding:28px}
+    .kicker{color:var(--muted); font-size:14px; margin:0 0 8px}
+    h1{margin:0 0 10px; font-size:38px; line-height:1.15}
+    .subtitle{margin:0 0 16px; color:var(--muted)}
+    .badges{display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 0}
+    .badge{
+      font-size:13px; color:rgba(232,238,252,.95);
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      padding:7px 10px; border-radius:999px;
+    }
+    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
+    .btn{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px; border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      font-weight:600; font-size:14px;
+    }
+    .btn:hover{transform:translateY(-1px); transition:.15s; background:rgba(255,255,255,.09)}
+    .btn.primary{
+      border:1px solid rgba(110,168,255,.35);
+      background:linear-gradient(135deg, rgba(110,168,255,.22), rgba(126,240,197,.10));
+    }
+    .hero-side{padding:22px}
+    .avatar{
+      width:70px; height:70px; border-radius:18px;
+      background:linear-gradient(135deg, rgba(110,168,255,.35), rgba(126,240,197,.18));
+      border:1px solid var(--line);
+      display:flex; align-items:center; justify-content:center;
+      font-weight:800; letter-spacing:.5px;
+      margin-bottom:14px;
+    }
+    .mini{color:var(--muted); font-size:14px; margin:0}
+    .mini strong{color:var(--text)}
+    .hr{height:1px; background:var(--line); margin:16px 0}
+    section{padding:22px 0}
+    .section-title{font-size:18px; margin:0 0 12px}
+    .grid{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+    @media (max-width:860px){ .grid{grid-template-columns:1fr;}}
+    .item{padding:16px}
+    .item h3{margin:0 0 6px; font-size:16px}
+    .item p{margin:0; color:var(--muted); font-size:14px}
+    .list{display:flex; flex-direction:column; gap:10px}
+    .linkrow{display:flex; align-items:center; justify-content:space-between; gap:12px}
+    .linkrow span{color:var(--muted); font-size:14px}
+    footer{padding:28px 0 40px; color:var(--muted); font-size:13px; text-align:center}
+    .pill{
+      display:inline-block; padding:4px 10px; border-radius:999px;
+      border:1px solid var(--line); background:rgba(255,255,255,.05);
+      margin-left:6px;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Hello, this is my website</h1>
-  <p>If you see this, index.html is working.</p>
+  <!-- 顶部导航 -->
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Xin Cheng</span>
+      </div>
+      <div class="nav-links">
+        <a href="#about">关于</a>
+        <a href="#projects">项目</a>
+        <a href="#notes">随笔</a>
+        <a href="#contact">联系</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- 头图 / 简介 -->
+    <div class="hero" id="top">
+      <div class="hero-grid">
+        <div class="card hero-main">
+          <p class="kicker">个人主页 · GitHub Pages</p>
+          <h1>你好，我是 Xin Cheng</h1>
+          <p class="subtitle">
+            这里用于展示我的一些项目、记录与联系方式。你可以把它当作一个轻量的“个人名片网站”。
+          </p>
+
+          <div class="cta">
+            <!-- 把下面链接改成你自己的 -->
+            <a class="btn primary" href="#projects">查看项目 →</a>
+            <a class="btn" href="https://github.com/paradox24724" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="btn" href="mailto:yourname@example.com">Email ✉</a>
+          </div>
+
+          <div class="badges">
+            <span class="badge">方向：数据 / 工程 / 建模</span>
+            <span class="badge">位置：China</span>
+            <span class="badge">状态：持续更新中</span>
+          </div>
+        </div>
+
+        <div class="card hero-side">
+          <div class="avatar">XC</div>
+          <p class="mini"><strong>一句话介绍：</strong>把复杂问题做成可理解、可复用的解决方案。</p>
+          <div class="hr"></div>
+          <div class="list">
+            <div class="linkrow">
+              <span>当前在做</span>
+              <span>个人网站搭建与内容整理</span>
+            </div>
+            <div class="linkrow">
+              <span>兴趣</span>
+              <span>工程数据、可视化、自动化</span>
+            </div>
+            <div class="linkrow">
+              <span>更新频率</span>
+              <span>不定期</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 关于 -->
+    <section id="about">
+      <h2 class="section-title">关于我</h2>
+      <div class="card item">
+        <p>
+          这里写一段更具体的自我介绍：你是谁、主要做什么、擅长什么、以及这个网站会放些什么内容。
+          建议 3–6 句即可，保持简洁。
+        </p>
+        <p style="margin-top:10px;">
+          你也可以把常用链接放在这里：简历、作品集、Google Scholar、公众号、B站、知乎等。
+        </p>
+      </div>
+    </section>
+
+    <!-- 项目 -->
+    <section id="projects">
+      <h2 class="section-title">项目</h2>
+      <div class="grid">
+        <div class="card item">
+          <h3>Project A <span class="pill">进行中</span></h3>
+          <p>一句话说明这个项目做什么、解决什么问题。可附上技术栈或亮点。</p>
+          <p style="margin-top:8px;">
+            <a class="btn" href="#" target="_blank" rel="noopener">项目链接 ↗</a>
+          </p>
+        </div>
+        <div class="card item">
+          <h3>Project B</h3>
+          <p>一句话说明这个项目。没有链接也没关系，先占位，后面再补。</p>
+          <p style="margin-top:8px;">
+            <a class="btn" href="#" target="_blank" rel="noopener">Demo ↗</a>
+          </p>
+        </div>
+        <div class="card item">
+          <h3>Project C</h3>
+          <p>一句话说明这个项目。</p>
+        </div>
+        <div class="card item">
+          <h3>Project D</h3>
+          <p>一句话说明这个项目。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 随笔/更新 -->
+    <section id="notes">
+      <h2 class="section-title">随笔 / 更新</h2>
+      <div class="card item">
+        <div class="list">
+          <div class="linkrow">
+            <span>2026-01-09</span>
+            <a class="btn" href="#">开始重建个人网站</a>
+          </div>
+          <div class="linkrow">
+            <span>2026-01-xx</span>
+            <a class="btn" href="#">（占位）写一篇短记录</a>
+          </div>
+        </div>
+        <p style="margin-top:12px; color:var(--muted); font-size:14px;">
+          这里你可以先用“列表”方式记录更新；如果以后想做真正的博客，我们再把它升级成多页面或 Markdown 驱动。
+        </p>
+      </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact">
+      <h2 class="section-title">联系</h2>
+      <div class="grid">
+        <div class="card item">
+          <h3>邮箱</h3>
+          <p>yourname@example.com（把它换成你的）</p>
+          <p style="margin-top:8px;">
+            <a class="btn primary" href="mailto:yourname@example.com">给我发邮件 ✉</a>
+          </p>
+        </div>
+        <div class="card item">
+          <h3>社交链接</h3>
+          <p style="margin:0 0 10px;">把你常用的平台链接放这里。</p>
+          <div class="cta">
+            <a class="btn" href="https://github.com/paradox24724" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="btn" href="#" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a class="btn" href="#" target="_blank" rel="noopener">知乎/公众号 ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Xin Cheng · Built with GitHub Pages
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
