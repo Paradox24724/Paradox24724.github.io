@@ -227,20 +227,17 @@
       <div class="card item">
         <div class="list">
           <div class="linkrow">
-
-<div class="list">
-  {% for post in site.posts %}
-    <div class="linkrow">
-      <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </div>
-  {% endfor %}
-</div>
             
-            <span>2026-01-xx</span>
-            <a class="btn" href="#">（占位）写一篇短记录</a>
-          </div>
-        </div>
+<!--自动更新在posts文件夹里的md文件上传 -->
+    <div class="list">
+      {% for post in site.posts %}
+         <div class="linkrow">
+         <span>{{ post.date | date: "%Y-%m-%d" }}</span>
+           <a href="{{ post.url }}">{{ post.title }}</a>
+         </div>
+         {% endfor %}
+         </div>
+            
         <p style="margin-top:12px; color:var(--muted); font-size:14px;">
           这里你可以先用“列表”方式记录更新；如果以后想做真正的博客，我们再把它升级成多页面或 Markdown 驱动。
         </p>
@@ -255,16 +252,16 @@
           <h3>邮箱</h3>
           <p>yourname@example.com（把它换成你的）</p>
           <p style="margin-top:8px;">
-            <a class="btn primary" href="mailto:yourname@example.com">给我发邮件 ✉</a>
+            <a class="btn primary" href="mailto:chengxinwhu@gmail.com">给我发邮件 ✉</a>
           </p>
         </div>
         <div class="card item">
           <h3>社交链接</h3>
           <p style="margin:0 0 10px;">把你常用的平台链接放这里。</p>
           <div class="cta">
-            <a class="btn" href="https://github.com/paradox24724" target="_blank" rel="noopener">GitHub ↗</a>
-            <a class="btn" href="#" target="_blank" rel="noopener">LinkedIn ↗</a>
-            <a class="btn" href="#" target="_blank" rel="noopener">知乎/公众号 ↗</a>
+            <a class="btn" href="https://github.com/paradox24724" target="_blank" rel="noopener">这是个秘密 ↗</a>
+    
+   
           </div>
         </div>
       </div>
