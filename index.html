@@ -1,4 +1,7 @@
 <!doctype html>
+---
+layout: default
+---
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
@@ -222,27 +225,25 @@
     </section>
 
     <!-- 随笔/更新 -->
-    <section id="notes">
-      <h2 class="section-title">随笔 / 更新</h2>
-      <div class="card item">
-        <div class="list">
-          <div class="linkrow">
-            
-<!--自动更新在posts文件夹里的md文件上传 -->
+<section id="notes">
+  <h2 class="section-title">随笔 / 更新</h2>
+  <div class="card item">
+
     <div class="list">
       {% for post in site.posts %}
-         <div class="linkrow">
-         <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-           <a href="{{ post.url }}">{{ post.title }}</a>
-         </div>
-         {% endfor %}
-         </div>
-            
-        <p style="margin-top:12px; color:var(--muted); font-size:14px;">
-          这里你可以先用“列表”方式记录更新；如果以后想做真正的博客，我们再把它升级成多页面或 Markdown 驱动。
-        </p>
-      </div>
-    </section>
+        <div class="linkrow">
+          <span>{{ post.date | date: "%Y-%m-%d" }}</span>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </div>
+      {% endfor %}
+    </div>
+
+    <p style="margin-top:12px; color:var(--muted); font-size:14px;">
+      这里你可以先用“列表”方式记录更新；如果以后想做真正的博客，我们再把它升级成多页面或 Markdown 驱动。
+    </p>
+
+  </div>
+</section>
 
     <!-- 联系方式 -->
     <section id="contact">
